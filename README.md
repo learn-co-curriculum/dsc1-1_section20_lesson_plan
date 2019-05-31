@@ -5,6 +5,14 @@
 
 This section is all about conducting statistical experiments! 
 
+## Objectives
+
+You will be able to:
+ * Explain the relation between $\alpha$ (alpha), $\beta$ (beta), power and type I/II errors
+ * Explain the tradeoffs in experimental design between power, sample size and effect size
+ * Perform a standard T-Test to compare the means of equal sized samples
+ * Demonstrate the relationship between power, sample size and effect size using graphs
+
 ## Prework
 
 * Introduction
@@ -13,7 +21,6 @@ This section is all about conducting statistical experiments!
 * Effect Sizes
 * Type 1 and Type 2 Errors
 * Statistical Power
-* 
 * Multiple Comparisons Problem
 * A/B Testing
 * Goodhart’s Law and Metric Tracking
@@ -50,11 +57,29 @@ sample2 = np.random.normal(loc=12, size=20)
 stats.ttest_ind(sample1, sample2)
 
 ## Repeat and Validate Type I/ Type II error Rates
+effect_size = 
+sample_size =
+alpha = 
+typeI_errors = 0
+typeII_errors = 0
+
+for i in range(10**3):
+    #Generate Samples; potentially use a conditional to determine whether null hypothesis is true/false
+    #Perform T-Test
+    #Save results to typeI/typeII error counters
 ```
 
 
 ```python
 ## We do 
+
+## Generate 2 random samples
+
+## Perform T-Test
+
+## Repeat and Validate Type I/ Type II error Rates
+def simulate_t_test():
+    #Probably appropriate as a summative assessment or class discussion
 ```
 
 
