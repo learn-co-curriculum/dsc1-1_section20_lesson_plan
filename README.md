@@ -1,9 +1,6 @@
 
-# Experimental Design
+# Experimental Design - Lesson Plan
 
-## Introduction
-
-This section is all about conducting statistical experiments! 
 
 ## Objectives
 
@@ -36,7 +33,27 @@ You will be able to:
 * A/B Testing - Lab
 * ANOVA - Lab
 
-## Effect Size, Sample Size, Power and Type I vs II errors
+## Class Outline
+
+1. Introduction 15+ minutes
+    * Perform an informal assessment and ask students to explain the relations between alpha, beta, power and type I / II errors, clarify if needed
+    * Progress the discussion to include effect size and sample size and how these intrinsically relate to power
+        * Again informal assessments should be used to gauge students understanding of this concept
+        * Discussing the difficulty of detecting a unfair coin with P(Heads)=.55 vs an unfair coin with P(Heads)=.9 can provide intuitive context for how effect size, sample size and power are interconnected
+2. Applications
+    * I Do (5 min)
+    * We Do (10 min)
+    * You Do (10 min)
+3. Discussion / Assessment
+    * Circle back to a high level discussion regarding effect size, sample size and power
+    * Key Questions:
+        * If you increase the effect size, and the sample size remains constant, what will happen to the power of the statistical test?
+        * For a set effect size, how are sample size and power related?
+        * Explain how the power of a statistical test relates to type I and II errors.
+
+## Introduction: Effect Size, Sample Size, Power and Type I vs II errors
+
+> *Use this as a guideline to orientate the class and review key concepts*
 
 Designing well thought out experiments requires careful consideration of balancing the precision and confidence you desire your results to have versus the amount of data required to meet these standards. If you wish to detect a 1% increase in patient outcomes for a new blood pressure medicine, you will need substantially more data then if you were in search of a 5% increase in outcomes. The reason is that more subtle differences such as an increase of only 1%, could be caused by simple random variation alone, and thus the sample size required to confidently detect such small differences can be quite large. 
 
@@ -55,6 +72,19 @@ sample2 = np.random.normal(loc=12, size=20)
 
 ## Perform T-Test
 stats.ttest_ind(sample1, sample2)
+```
+
+
+```python
+## We do - Mirror Code Above
+
+## Generate 2 random samples
+
+## Perform T-Test
+
+## Repeat and Validate Type I/ Type II error Rates - How can we encapsulate this procedure using a function or functions?
+def simulate_t_test():
+    #Probably appropriate as a summative assessment or class discussion
 
 ## Repeat and Validate Type I/ Type II error Rates
 effect_size = 
@@ -71,30 +101,32 @@ for i in range(10**3):
 
 
 ```python
-## We do 
-
-## Generate 2 random samples
-
-## Perform T-Test
-
-## Repeat and Validate Type I/ Type II error Rates
-def simulate_t_test():
-    #Probably appropriate as a summative assessment or class discussion
-```
-
-
-```python
 ## You do
+#Choose an effect size. 
+#Generate random samples using this parameter and determine the effective power at various sample sizes. 
 ```
 
-## Discussion Questions:
+## Discussion Question:
 
 * How might you investigate the relationship between effect size, sample size and power for the above scenario?
 
-# Additional Useful Investigation from V2
+## Assessment
 
-https://github.com/learn-co-curriculum/dsc-effect-sizes-pvalues-and-power-lab/tree/solution
+* If you increase the effect size, and the sample size remains constant, what will happen to the power of the statistical test?
+* For a set effect size, how are sample size and power related?
+* Explain how the power of a statistical test relates to type I and II errors.
 
-## ANOVA
+## Common Misconceptions
 
-> Note: Briefly mention, but focus attention to developing a solid understanding of A/B testing. There's already a lot of theory and concepts for students to master
+* **Misconception**: Effect size is the difference between the control and experimental group.
+    > **Clarification**: Effect size is the difference between the null hypothesis and the alternative hypothesis; the difference which you hope to be able to measure. These statistical techniques will not definitively tell you the parametric difference between the two populations themselves. Rather, you are comparing the differences between two population *samples* and using this to determine the likelihood that the underlying populations are substantially different or not. The effect size is the minimum difference that you consider substantial and want to be able to detect in your statistical test.
+
+### Reflection - To be filled out during pilot / subsequent implementations
+
+Here's a list of thought starters for the instructor:
+* How do you think this lesson went? What were the strongest points? Weakest?
+* Were there additional student misconceptions that came up?
+* To what degree have students mastered the defined objectives?
+* Do you have any thoughts on alternative activities or explanations that would enhance this lesson? 
+
+Further reflection questions for students can be found [here](https://github.com/learn-co-curriculum/ds-lessons-starter/blob/master/lesson-plan-materials/ReflectionQuestions.md).
